@@ -14,7 +14,9 @@ import io.reactivex.functions.Consumer;
 
 import static com.tokg.doubleclicktest.RxView.Preconditions.checkNotNull;
 import static com.tokg.doubleclicktest.RxView.Preconditions.checkUiThread;
-
+/**
+ * Created by TokG on 18/11/11.
+ */
 public class RxView {
 
         /**

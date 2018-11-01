@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-
+/**
+ * Created by TokG on 18/11/11.
+ */
 public class ThreeButton extends AppCompatButton implements View.OnClickListener {
     String TAG = "ThreeButton";
 

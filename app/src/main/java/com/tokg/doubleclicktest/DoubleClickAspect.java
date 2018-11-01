@@ -12,28 +12,23 @@ import org.aspectj.lang.reflect.MethodSignature;
 import java.lang.reflect.Method;
 
 /**
- * Created by Tony Shen on 16/3/28.
+ * Created by TokG on 18/11/11.
  */
 @Aspect
 public class DoubleClickAspect {
-
-
-    private Long sLastclick = 0L;
-    private final Long FILTER_TIMEM = 1000L;
-
+    private Long mLastClickTime = 0L;
+    private final Long TIME_INTERVAL = 1000L;
     @Around("execution(* android.view.View.OnClickListener.onClick(..))")
     public void clickFilterHook(ProceedingJoinPoint joinPoint) {
-        if (System.currentTimeMillis() - sLastclick >= FILTER_TIMEM) {
-            sLastclick = System.currentTimeMillis();
+        if (System.currentTimeMillis() - mLastClickTime >= TIME_INTERVAL) {
+            mLastClickTime = System.currentTimeMillis();
             try {
                 joinPoint.proceed();
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
             }
         } else {
-            Log.e("ClickFilterHook", "重复点击,已过滤");
+            Log.e("ClickFilterHook", "不要重复点击");
         }
     }
-
-
 }

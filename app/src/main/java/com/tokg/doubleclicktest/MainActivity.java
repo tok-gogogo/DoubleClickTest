@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.lang.reflect.Field;
-
+/**
+ * Created by TokG on 18/11/11.
+ */
 public class MainActivity extends AppCompatActivity implements RxView.Action1<View> {
     static String TAG = "MainActivity";
     private static long mLastClickTime = 0;
